@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# export COMPOSE_FILE=docker-compose-prod.yml
+# ./bin/stack-destroy
+
+export COMPOSE_FILE=docker-compose.yml
+./bin/stack-destroy

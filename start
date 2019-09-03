@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+# # run first for the prod stack, before we cleanup and start the dev stack
+# export COMPOSE_FILE=docker-compose-prod.yml
+# ./bin/stack-reset
+
+export COMPOSE_FILE=docker-compose.yml
+./bin/stack-reset
+./bin/stack-run

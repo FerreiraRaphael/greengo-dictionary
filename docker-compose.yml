@@ -1,0 +1,46 @@
+version: "2.4"
+
+volumes:
+  redis-data:
+  postgres-data:
+
+services:
+
+#  api:
+#    build:
+#      context: server
+#      dockerfile: dev.Dockerfile
+#      args:
+#        NODE_VERSION:
+#        APP_VERSION:
+#    volumes:
+#      - ./server:/home/app
+#    links:
+#      - postgres:postgres.local
+#    ports:
+#      - 3001:3001
+#    depends_on:
+#      - postgres
+#      - redis
+
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "test"
+
+  redis:
+    image: redis:4.0.5-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    hostname: redis
+    ports:
+      - "6378:6378"
+    volumes:
+      - redis-data:/data

@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+pushd $(dirname $0)/.. >/dev/null
+
+export COMPOSE_PROJECT_NAME='greengo-dictory'
+
+docker-compose kill
+docker-compose rm -f
+docker-compose down -v --rmi local
