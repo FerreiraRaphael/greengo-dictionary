@@ -1,0 +1,103 @@
+.Template {
+    background-color: #6cf178;
+    width: 1080px;
+    padding: 5rem 5rem;
+    text-align: start;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.Template-sm {
+    width: 240px;
+    padding: 1rem 1rem;
+}
+
+.Template-text-container {
+    width: 80%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.Template-text-container-sm {
+    height: 80%;
+}
+
+.Template-title {
+    font-size: 125px;
+    color: #012577;
+    font-family:'Baskerville Bold';
+    font-weight: bold;
+    /*width: 760px;*/
+    margin: 0 0 120px 0;
+    padding: 0;
+}
+
+.Template-title-sm {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+.Template-translate {
+    font-size: 64px;
+    color: #010300;
+    font-family:'Baskerville BT Italic';
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+}
+
+.Template-translate-sm {
+    font-size: 1rem;
+}
+
+.Template-description {
+    font-size: 64px;
+    font-family:'Baskerville Regular';
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+}
+
+.Template-description-sm {
+    font-size: 1rem;
+}
+
+.Template-userinfo {
+    font-size: 32px;
+    color: #012577;
+    font-family:'Baskerville Bold';
+    font-weight: bold;
+    width: 700px;
+    margin: 120px 0 0 0;
+    padding: 0;
+}
+
+.Template-userinfo-sm {
+    font-size: 0.5rem;
+    margin: 1rem 0 0 0;
+    width: 160px;
+}
+
+.Template-footer {
+    margin: 120px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Template-footer-sm {
+    margin: 1rem 0 0 0;
+}
+
+.instagram-sm {
+    width: 100px;
+}
+
+.logo-sm {
+    width: 60px;
+}

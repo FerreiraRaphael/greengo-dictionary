@@ -1,0 +1,7 @@
+.Card {
+  margin: .5rem;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  text-align: start;
+}

@@ -1,0 +1,32 @@
+.Nav {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.Nav-logo {
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.Nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #002776;
+}

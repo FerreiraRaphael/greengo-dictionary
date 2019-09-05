@@ -1,13 +1,37 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Baskerville Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: 'Baskerville Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Baskerville Regular'), url('fonts/LibreBaskerville-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Baskerville Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Baskerville Bold'), url('fonts/LibreBaskerville-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Baskerville BT Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Baskerville BT Italic'), url('fonts/LibreBaskerville-RegularItalic.ttf') format('woff');
+}
+

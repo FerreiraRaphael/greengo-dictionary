@@ -1,0 +1,8 @@
+.CreateTemplate {
+  font-size: 1.5rem;
+  color: #012577;
+  cursor: pointer;
+  border: 0;
+  text-transform: lowercase;
+}
+

@@ -1,0 +1,19 @@
+.DownloadTemplate {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.DownloadButton {
+  margin: 1rem 0;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid #002776;
+  border-radius: 5rem;
+  outline: 0;
+  color: #002776;
+  font-size: 1.5rem;
+  width: 100%;
+  cursor: pointer;
+}

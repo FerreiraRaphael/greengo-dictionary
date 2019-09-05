@@ -1,0 +1,44 @@
+.CreateForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.Title {
+  font-family:'Baskerville BT regular';
+  color: #002776;
+  text-transform: lowercase;
+}
+
+.CreateForm input,select,textarea {
+  padding: .5rem;
+  border: 1px solid #002776;
+  border-radius: 5rem;
+  margin-bottom: 1rem;
+  outline: 0;
+  background-color: transparent;
+}
+
+.CreateForm button {
+  margin: 1rem 0;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid #002776;
+  border-radius: 5rem;
+  outline: 0;
+  color: #002776;
+  font-size: 1.5rem;
+}
+
+.CreateForm label {
+  font-family:'Baskerville BT Regular';
+  color: #002776;
+  text-transform: lowercase;
+  margin: 0 0 .5rem .3rem;
+}
+
+.CreateForm p {
+  padding: 0;
+  margin: 0 0 1rem 0.3rem;
+  color: #f44336;
+  text-transform: lowercase;
+}
