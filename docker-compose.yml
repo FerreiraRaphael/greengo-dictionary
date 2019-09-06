@@ -1,7 +1,6 @@
 version: "2.4"
 
 volumes:
-  redis-data:
   postgres-data:
 
 services:
@@ -18,10 +17,9 @@ services:
 #    links:
 #      - postgres:postgres.local
 #    ports:
-#      - 3001:3001
+#      - 4000:4000
 #    depends_on:
 #      - postgres
-#      - redis
 
   postgres:
     image: postgres
@@ -35,12 +33,3 @@ services:
       POSTGRES_USER: "test"
       POSTGRES_PASSWORD: "test"
       POSTGRES_DB: "test"
-
-  redis:
-    image: redis:4.0.5-alpine
-    command: ["redis-server", "--appendonly", "yes"]
-    hostname: redis
-    ports:
-      - "6378:6378"
-    volumes:
-      - redis-data:/data

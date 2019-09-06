@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon --inspect ./index.js",
-    "migrate": "knex migrate:latest"
+    "migrate": "knex migrate:latest",
+    "heroku-postbuild": "yarn migrate"
   },
   "dependencies": {
     "apollo-server": "^2.9.3",
