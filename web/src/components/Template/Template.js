@@ -35,8 +35,8 @@ export default function Template({ height, phrase, description, translation, use
         </h2>
       )}
       <div className={cs("Template-footer", { "Template-footer-sm": small })}>
-        <img className={cs({ "instagram-sm": small })} src={instagram} />
-        <img className={cs({ "logo-sm": small })} src={logo} />
+        <img alt="instagram" className={cs({ "instagram-sm": small })} src={instagram} />
+        <img alt="logo" className={cs({ "logo-sm": small })} src={logo} />
       </div>
     </div>
   );

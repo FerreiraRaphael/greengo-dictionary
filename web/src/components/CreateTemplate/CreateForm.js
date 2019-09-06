@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Template from "../Template/Template";
@@ -14,7 +14,7 @@ const schema = Yup.object().shape({
     .max(45, "Deve ter menos que 45 caracteres.")
     .required("Campo obrigatorio."),
   type: Yup.string().required("Campo obrigatorio."),
-  username: Yup.string()
+  userName: Yup.string()
     .min(2, "Deve ter mais que 2 caracteres.")
     .max(20, "Deve ter menos que 20 caracteres.")
     .required("Campo obrigatorio."),
@@ -28,7 +28,7 @@ const initialValue = {
   phrase: "",
   translation: "",
   type: "exp",
-  username: "",
+  userName: "",
   description: ""
 };
 
@@ -47,9 +47,9 @@ export default function CreateForm(props) {
           return (
             <Fragment>
               <Form className="CreateForm">
-                <label htmlFor="username">Nome de usuário (@instagram):</label>
-                <Field name="username" placeholder="Nome de usuário" />
-                {errors.username && touched.username ? <p>{errors.username}</p> : null}
+                <label htmlFor="userName">Nome de usuário (@instagram):</label>
+                <Field name="userName" placeholder="Nome de usuário" />
+                {errors.userName && touched.userName ? <p>{errors.userName}</p> : null}
                 <label htmlFor="phrase">Frase:</label>
                 <Field name="phrase" placeholder="Frase" />
                 {errors.phrase && touched.phrase ? <p>{errors.phrase}</p> : null}
@@ -73,7 +73,7 @@ export default function CreateForm(props) {
                     translation={values.translation}
                     description={values.description}
                     phrase={values.phrase}
-                    userName={values.username}
+                    userName={values.userName}
                     type={values.type}
                     small
                   />

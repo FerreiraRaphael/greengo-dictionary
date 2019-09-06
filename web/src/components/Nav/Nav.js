@@ -9,7 +9,7 @@ export default function Nav() {
       <div className="Nav-container">
         <div>
           <a href="https://www.instagram.com/greengodictionary/">
-            <img src={logo} className="Nav-logo" />
+            <img alt="greengo logo" src={logo} className="Nav-logo" />
             greengo dictionary
           </a>
         </div>
