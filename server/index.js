@@ -62,8 +62,10 @@ const resolvers = {
     },
   },
   Query: {
-    translations: async (_, args, {database}) =>
-      database('translations').select('*'),
+    translations: async (_, args, {database}) => {
+      console.log('querying')
+      return database('translations').select('*')
+    },
   },
   Mutation: {
     createTranslation: async (_, { input }, { database }) => {
@@ -88,6 +90,9 @@ const server = new ApolloServer({
     return {
       database,
     }
+  },
+  subscriptions: {
+    keepAlive: 10000,
   }
 });
 
