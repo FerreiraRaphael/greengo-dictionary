@@ -1,4 +1,6 @@
 const pubSub = require("./pubSub");
+const database = require('./database');
+const uuid = require("uuid/v4");
 
 const { ApolloServer, gql } = require('apollo-server');
 
@@ -19,40 +21,57 @@ const books = [
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
 const typeDefs = gql`  
-    type Subscription {
-        hi: String
+    type Translation {
+        id: String
+        phrase: String
+        type: String
+        description: String
+        translation: String
+        userName: String
+    }
+    
+    input TranslationInput {
+        phrase: String
+        type: String
+        description: String
+        translation: String
+        userName: String
     }
 
-    type Book {
-        title: String
-        author: String
+    type Subscription {
+        translationCreated: Translation
     }
+    
     type Query {
-        books: [Book]
+        translations: [Translation]
     }
     
     type Mutation {
-        hey: String
+        createTranslation(input: TranslationInput): Translation
     } 
 `;
 
-const HEY_HI = 'HEY_HI';
+const TRANSLATION_CREATED = 'TRANSLATION_CREATED';
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Subscription: {
-    hi: {
-      subscribe: () => pubSub.asyncIterator([HEY_HI])
+    translationCreated: {
+      subscribe: () => pubSub.asyncIterator([TRANSLATION_CREATED])
     },
   },
   Query: {
-    books: () => books,
+    translations: async (_, args, {database}) =>
+      database('translations').select('*'),
   },
   Mutation: {
-    hey: () => {
-      pubSub.publish(HEY_HI, { hi: 'HI' });
-      return 'HEY';
+    createTranslation: async (_, { input }, { database }) => {
+      const id = uuid();
+      const createInput = { id, ...input };
+      await database('translations').insert(createInput);
+      pubSub.publish(TRANSLATION_CREATED, { translationCreated: createInput });
+      return createInput;
     }
   }
 };
@@ -65,6 +84,11 @@ const server = new ApolloServer({
   resolvers,
   introspection: true,
   playground: true,
+  context: (...args) => {
+    return {
+      database,
+    }
+  }
 });
 
 // This `listen` method launches a web-server.  Existing apps
