@@ -50,7 +50,7 @@ export default function CreateForm(props) {
                 <label htmlFor="userName">Nome de usuário (@instagram):</label>
                 <Field name="userName" placeholder="Nome de usuário" />
                 {errors.userName && touched.userName ? <p>{errors.userName}</p> : null}
-                <label htmlFor="phrase">Frase:</label>
+                <label htmlFor="phrase">Frase: (Em Inglês)</label>
                 <Field name="phrase" placeholder="Frase" />
                 {errors.phrase && touched.phrase ? <p>{errors.phrase}</p> : null}
                 <label htmlFor="translation">Traduçao:</label>
@@ -58,11 +58,12 @@ export default function CreateForm(props) {
                 {errors.translation && touched.translation ? <p>{errors.translation}</p> : null}
                 <label htmlFor="type">Tipo:</label>
                 <Field component="select" name="type">
-                  <option value="exp">Expressão (exp)</option>
-                  <option value="sub">Substantivo (sub)</option>
-                  <option value="adj">Adjetivo (adj)</option>
-                  <option value="pro">Provérbio (pro)</option>
-                  <option value="cit">Citação (cit)</option>
+                  <option value="exp">Expression (exp)</option>
+                  <option value="n">Noun (n)</option>
+                  <option value="adj">Adjective (adj)</option>
+                  <option value="prov">P (prov)</option>
+                  <option value="quo">Quote (quo)</option>
+                  <option value="v">Verb (v)</option>
                 </Field>
                 {errors.type && touched.type ? <p>{errors.type}</p> : null}
                 <label htmlFor="description">Descrição:</label>

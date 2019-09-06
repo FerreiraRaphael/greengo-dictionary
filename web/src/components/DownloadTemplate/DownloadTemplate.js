@@ -77,7 +77,7 @@ DownloadTemplate.propTypes = {
   onDownload: propTypes.func.isRequired,
   onClose: propTypes.func,
   phrase: propTypes.string.isRequired,
-  type: propTypes.oneOf(["exp", "sub", "adj", "pro", "cit"]).isRequired,
+  type: propTypes.oneOf(["exp", "n", "adj", "prov", "quo", "v"]).isRequired,
   description: propTypes.string.isRequired,
   translation: propTypes.string.isRequired,
   userName: propTypes.string.isRequired
